@@ -86,9 +86,9 @@
   function minimax(newBoard, player) {
   	let availSpots = emptyBoxes(newBoard);
   	if (checkWin(newBoard)) {
-        return {score: 10};
-      } else if (checkWin(newBoard) === false) {
         return {score: -10};
+      } else if (checkWin(newBoard) === false) {
+        return {score: 10};
       } else if (checkWin(newBoard) === null) {
         return {score: 0};
       }
