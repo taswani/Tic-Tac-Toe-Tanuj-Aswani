@@ -120,8 +120,8 @@
   		let bestScore = 10000;
   		for(let i = 0; i < moves.length; i++) {
   			if (moves[i].score < bestScore) {
-  				bestScore = moves[i].score;
-  				bestMove = i;
+  			  bestScore = moves[i].score;
+          bestMove = i;
   			}
   		}
   	}
