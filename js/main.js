@@ -40,11 +40,18 @@
 
 
   //Function used to set up input values as names for each player.
+  //Sets up no name entries as player 1 and player 2 instead of leaving them blank.
   function setNames () {
-    let player1Name = $('input#name1').val();
-    let player2Name = $('input#name2').val();
-    player1.name = player1Name;
-    player2.name = player2Name;
+    if (($('input#name1').val()) === "") {
+      player1.name = 'Player 1'
+    } else {
+      player1.name = $('input#name1').val();
+    }
+    if (($('input#name2').val()) === "") {
+      player2.name = 'Player 2'
+    } else {
+      player2.name = $('input#name2').val();
+    }
   }
 
 
@@ -166,7 +173,9 @@
   //Then sets turn to player 1.
   function aiFillsBox () {
     let aiBox = parseInt(bestSpot());
-    $('#' + aiBox).addClass('box-filled-2 disabled');
+    setTimeout(function () {
+      $('#' + aiBox).addClass('box-filled-2 disabled');
+    }, 75);
     boxValue[aiBox] = player2Val;
     setActiveP1();
   }
