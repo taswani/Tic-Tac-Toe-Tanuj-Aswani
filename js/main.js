@@ -248,8 +248,10 @@
     }
     checkWin(boxValue);
     if (checkWin(boxValue)) {
+      $('.box').addClass('disabled');
       setTimeout(function () {finish(1)}, 400);
     } else if (checkWin(boxValue) === false) {
+      $('.box').addClass('disabled');
       setTimeout(function () {finish(2)}, 400);
     } else if (checkWin(boxValue) === null) {
       setTimeout(function () {finish(3)}, 400);
