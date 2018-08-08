@@ -205,8 +205,19 @@
   }
 
 
-  //EventListener for the new game button that serves to reset everything in the game.
+  //EventListeners for the new game buttons that serves to reset everything in the game.
   $('.button').on('click', () => {
+    $('.box').removeClass('box-filled-1 box-filled-2 disabled')
+    setActiveP1();
+    boxValue = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
+    setNames();
+    insertNames();
+    $('#start').hide();
+    $('#board').show();
+    $('#finish').hide();
+  })
+
+  $('.button1').on('click', () => {
     $('.box').removeClass('box-filled-1 box-filled-2 disabled')
     setActiveP1();
     boxValue = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
